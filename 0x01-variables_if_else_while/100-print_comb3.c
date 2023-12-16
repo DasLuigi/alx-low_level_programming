@@ -1,33 +1,32 @@
 #include <stdio.h>
 
 /**
- * main - Prints numbers between 00 to 99.
+ * main - prints all possiblr different combinations of two digits
  *
- * Return: Always 0 (Success)
+ * Return: always 0 (Success)
+ *
  */
+
 int main(void)
 {
-	int i, e;
+	int ones = '0';
+	int tens = '0';
 
-	i = 48;
-	e = 48;
-
-	while (e < 58)
+	for (tens = '0'; tens <= '9'; tens++)/* prints the tens digit */
 	{
-		i = 48;
-		while (i < 58)
+		for (ones = '0'; ones <= '9'; ones++)/* prints the unit digits*/
 		{
-			putchar(e);
-			putchar(i);
-			if (i == 57 && e == 57)
+			if (!((ones == tens) || (tens > ones)))/*eliminates repitition*/
 			{
-				break;
+				putchar(tens);
+				putchar(ones);
+				if (!(ones == '9' && tens == '8'))/*addes comma and space*/
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			putchar(',');
-			putchar(' ');
-			i++;
 		}
-		e++;
 	}
 	putchar('\n');
 	return (0);
