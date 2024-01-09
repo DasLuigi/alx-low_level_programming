@@ -1,22 +1,21 @@
 #include "main.h"
 
 /**
- * _memset - fills the first n bytes of the memory area pointed
- * to by s with the constant byte b
- * @s: source string
- * @b: The constant byte for filling
+ * _memcpy - copies n bytes from memory area src to memory area dest
+ * @dest: pointer to memory destination
+ * @src: pointer to memory source
  * @n: lenght of buffer
- * Return: new string
+ * Return: dest
  */
 
-char *_memset(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i = 0;
 
 	while (i < n)
 	{
-		*(s + i) = b;
+		*(dest + i) = *(src + i);
 		i++;
 	}
-	return (s);
+	return (dest);
 }
